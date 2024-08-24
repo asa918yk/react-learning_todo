@@ -4,7 +4,7 @@ export default function TodoList(props) {
     return (
         <div className="list">
             {items.map((item, index) =>
-            <TodoItem item={item} key={index} />
+            <TodoItem item={item} index={index} key={index} deleteTodo={props.deleteTodo} />
             )}
         </div>
     );

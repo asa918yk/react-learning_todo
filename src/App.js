@@ -6,10 +6,13 @@ function App() {
   function addTodo(name) {
     setItems([...items, name]);
   }
+  function deleteTodo(itemIndex) {
+    setItems(items.filter((item, index) => index !== itemIndex));
+  }
   return (
     <div className="App">
       <TodoForm addTodo={addTodo} />
-      <TodoList items={items} />
+      <TodoList items={items} deleteTodo={deleteTodo} />
     </div>
   );
 }
